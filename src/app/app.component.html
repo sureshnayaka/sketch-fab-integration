@@ -1,0 +1,33 @@
+<div class="container">
+	<div class="menu">
+		<span>3D Viewify</span>
+	</div>
+
+	<div class="color">
+		<span> Select frame border color:</span>
+		<button *ngFor="let color of colors; let i = index" [ngStyle]="{ 'background-color': color.rgb }"
+			(click)="changeBackgroundColor(i)" class="color-box" [class.selected]="color.name === selectedColor">
+		</button>
+	</div>
+	<div class="editor-iframe">
+		<iframe id="chili-Frame" title="Chili-editor" #chiliFrame name="chili-iframe" src=""></iframe>
+		<button mat-button (click)="openDialog()">3D View <i class="fa-solid fa-cube"></i></button>
+	</div>
+	<div *ngIf="isDialogOpen" class="dialog-backdrop" (onKeyPress)="closeDialog()"></div>
+	<div *ngIf="isDialogOpen" class="full-screen-dialog">
+		<div style="display: flex; align-items: center;"
+			[ngStyle]="!isLoading ? {'display': 'none'} : {'display': 'Block'}">
+			<div style="display: flex; align-items: center;">
+				<i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i>
+				<span>Preparing the model<span class="dots">...</span></span>
+			</div>
+		</div>
+		<div class="sketchfab-container">
+			<iframe src="" title="Sketch-fab" id="api-frame" class="sketchfab-frame"
+				allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport
+				execution-while-not-rendered web-share allowfullscreen mozallowfullscreen="true"
+				webkitallowfullscreen="true"></iframe>
+		</div>
+		<button (click)="closeDialog()">Close <i class="fa-solid fa-rectangle-xmark"></i></button>
+	</div>
+</div>
