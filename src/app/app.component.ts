@@ -10,12 +10,12 @@ import { _3DModule } from './material-details';
 
 //this are the id and apikey from elefantprint please updated has needed.
 const API_CONFIG: ApiConfig = {
-	ws: '040a3eef-ebcd-455e-bc1e-fd98a20446ff',
-	vp: 'cda7bf48-02dc-40a5-a12e-6a50bc0ebbaa',
-	apiKey: 'KATSq3Alr5bmaVCk9DerzaytHo7PHYah0onAERPvjBFvGMpw3cr2oENfKfWbNj4DYV5nW6Rbzzg4hA21ACR11x8lB1exDLjH', // Use environment variable or default value
-	doc: '5c2554b8-39c6-4148-bc4c-5d7de039b71f',
-	baseURL: 'https://cp-cye-648.chili-publish.online',
-	environment: 'cp-cye-648',
+	ws: '',
+	vp: '',
+	apiKey: '', // Use environment variable or default value
+	doc: '',
+	baseURL: '',
+	environment: '',
 };
 // Function to construct iframe URL
 const getIframeURL = (config: ApiConfig): string => {
